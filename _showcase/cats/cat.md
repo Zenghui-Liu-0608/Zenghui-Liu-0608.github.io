@@ -6,17 +6,15 @@ group: My Life
 ---
 <style>
   .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    margin: -5px; /* Negative margin to compensate for the padding */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    grid-gap: 10px; /* 间隔 */
   }
   .gallery img {
-    flex: 1 0 21%; /* adjust number to increase/decrease width, keeping margin in mind */
-    margin: 5px;
-    max-width: calc(25% - 10px); /* adjust width minus twice the margin */
+    width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Optional: Adds shadow to images */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选：为图片添加阴影 */
   }
 </style>
 <div class="gallery">
