@@ -7,20 +7,20 @@ group: My Life
 <style>
   .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    grid-gap: 10px; /* 间隔 */
+    grid-template-columns: repeat(4, 1fr); /* 设置为四列 */
+    grid-gap: 10px; /* 图片之间的间隔 */
   }
   .gallery img {
     width: 100%;
     height: auto;
     border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* 可选：为图片添加阴影 */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
 </style>
 <div class="gallery">
   {% for image in site.static_files %}
     {% if image.path contains 'assets/dcim' %}
-      <img src="{{ image.path | relative_url }}" class="img-fluid rounded">
+      <img src="{{ image.path | relative_url }}" class="img-fluid rounded" loading="lazy">
     {% endif %}
   {% endfor %}
 </div>
