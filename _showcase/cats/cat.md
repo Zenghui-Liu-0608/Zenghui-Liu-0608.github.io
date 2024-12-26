@@ -6,7 +6,7 @@ group: My Life
 ---
 <div>
 {% for image in site.static_files %}
-  {% if image.path contains 'assets/images/dcim/' %}
+  {% if image.path contains 'assets/dcim/' %}
     <img src="{{ image.path | relative_url }}" class="img-fluid rounded" >
   {% endif %}
 {% endfor %}
