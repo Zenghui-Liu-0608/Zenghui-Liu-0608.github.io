@@ -8,7 +8,7 @@ date: 2024-01-12 00:01:00 +0800
     <h2>Welcome to Showcase!</h2>
     <hr />
     <p>
-        <code>Showcase</code> Here I will show my life, including sports, travel, social and some other interesting things, to help you understand me better.
+        <code>Showcase</code> Here, I will share some interesting aspects of my life, such as sports: basketball, table tennis, and badminton; travel; and some community activities I organize and participate in. I believe this will help you understand me better.
     </p>
     
 </div>
