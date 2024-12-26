@@ -1,7 +1,7 @@
 ---
 title:          "Intelligent generation method of infection risk map and management system in hospital waiting room for respiratory infectious diseases"
 date:           2024-08-27 00:01:00 +0800
-selected:       false
+selected:       true
 pub:            "Journal of Building Engineering"
 pub_date:       "2024"
 abstract: >-
