@@ -51,11 +51,12 @@ experience:
    date: Jul. 2022 - Sep. 2022
 
 interests:
-- name: Urban AI
-- name: Energy transition equity
-- name: Impact assessment of climate adaptation technologies
-- name: Transformative solutions at the nexus of humans, infrastructure, energy, and urban systems.
-- name: Smart fire fighting
+  - "Urban AI"
+  - "Energy transition equity"
+  - "Impact assessment of climate adaptation technologies"
+  - "Transformative solutions at the nexus of humans, infrastructure, energy, and urban systems."
+  - "Smart fire fighting"
+
 
 awards:
 - name: National Scholarship for Graduate Students
