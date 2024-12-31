@@ -6,8 +6,4 @@ homepage:
 
 footer_text: "Start with real problems, not subject knowledge gaps."
 
-footer_components:
-  - type: "visitor_counter"
-    description: "Counts the number of visitors to the site."
-  - type: "likes_counter"
-    description: "Records the number of likes."
+
