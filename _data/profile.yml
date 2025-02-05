@@ -26,7 +26,7 @@ short_bio: >-
   <p>
     你好, Hello, こんにちは, Bonjour, Привет, Hallo, مرحبا, नमस्ते, 안녕하세요, Ciao.
   I'm Liu Zenghui. I am currently completing my master's studies at the College of Future Technology, Tianjin University, primarily engaged in fire dynamics, building fire analysis, and intelligent fire protection. Previously, I conducted a one-year research on the spatiotemporal prediction of infection risks in waiting rooms. In the future, I will devote myself to the research on resilience, sustainability, and equity of urban complex systems. Additionally, I am currently a student member of the Architectural Society of China, the Fire Engineers Association, and the International Building Performance Simulation Association. I also serve as a peer reviewer for journals such as Humanities and Social Sciences Communications and Journal of Safety Science and Resilience.
-   In my spare time, I play basketball, table tennis, whipped egg (a kind of card game), listen to music, and play the guitar (for indie music lovers).
+   In my spare time, I play basketball, table tennis, Guan Dan (a kind of card game), listen to music, and play the guitar (for indie music lovers).
   </p>
 
 portrait_url: /assets/images/photos/zenghui.jpg
@@ -43,7 +43,7 @@ education:
 - name: Shenyang Jianzhu University
   logo: /assets/images/badges/SJZU_red.png
   position: B.S. in Engineering Management
-  date: Sep. 2019 - Jul. 2024
+  date: Sep. 2019 - Jul. 2023
 
 experience:
  - name: China Construction Eighth Engineering Division
