@@ -15,8 +15,8 @@ Wechat: Uglyllliiiu
 #github: your_github_id
 #twitter: your_twitter_id  # Do not include the '@' symbol
 wechat_qrcode: /assets/images/etc/wechat.png
-# wechat_prompt: >-
-#   Please tell me your <strong>name</strong> and <strong>affiliation</strong> (current or past) when adding my wechat. Thanks!
+wechat_prompt: >-
+   I am looking for all opportunities to cooperate and exchange, I hope to make friends with you, thank you!
 # linkedin: your-linked-in-id
 orcid: 0009-0002-7000-5248
 
