@@ -1,7 +1,7 @@
 ---
 title:          "Advancing just transition: The role of biomass co-firing in emission reductions and employment for coal regions"
 date:           2025-03-01 00:01:00 +0800
-selected:       true
+selected:       false
 pub:            "Sustainable Energy Technologies and Assessments"
 pub_date:       "2025"
 abstract: >-

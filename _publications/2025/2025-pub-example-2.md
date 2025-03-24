@@ -10,5 +10,5 @@ cover:          /assets/images/covers/cover25-2.jpg
 authors:
 - Weiyao Yang,Sunan Tian,Mingyu Zhai*,Fupeng Li,Da Huo,Suoao Wang, Sijie Liu,Zenghui Liu.
 links:
-  Paper: http://dx.doi.org/10.1016/j.jenvman.2025.104246
+  Paper: http://dx.doi.org/10.1016/j.jenvman.2025.125067
 ---
