@@ -20,7 +20,7 @@ group: My Life
 <div class="gallery">
   {% for image in site.static_files %}
     {% if image.path contains 'assets/dcim' %}
-      <img src="{{ image.path | relative_url }}" class="img-fluid rounded" loading="lazy">
+      <img src="{{ image.path | relative_url }}" title="{{ image.path | split: '.' | first }}" class="img-fluid rounded" loading="lazy">
     {% endif %}
   {% endfor %}
 </div>
