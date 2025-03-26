@@ -6,7 +6,7 @@ pub:            "Journal of Asian Architecture and Building Engineering"
 pub_date:       "2024"
 abstract: >-
  The innovation of this study is the combination of combinatorial machine learning methods with explanatory analysis, which not only improves the accuracy of cost predictions, but also enhances the transparency of the model. By analyzing the interaction between features, the researchers found that there is a negative correlation between the "expected project duration" and the "building structure", while the "expected project duration" and the "interior decoration" may cancel each other out. This research result is of great significance to construction management. It not only helps investors assess the profitability of projects more accurately, but also improves the efficiency and quality of investment decisions.
-cover:          /assets/images/covers/cover6.jpg
+cover:          /assets/images/covers/cover6.png
 authors:
 - Zenghui Liu,Jing Lin*.
 links:
