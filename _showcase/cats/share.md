@@ -59,7 +59,7 @@ group: My Life
     </div>
     <div class="item-text">
       <p class="item-description">
-        A local webpage that displays 99 English sentences with their Chinese translations 
+        A local webpage that displays 'Yangshuai 99 English sentences' with their Chinese translations 
         and provides text-to-speech functionality for convenient practice. 
         <br>
         <a href="/assets/tools/99s.html" target="_blank">Go</a>
