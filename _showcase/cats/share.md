@@ -1,8 +1,8 @@
 ---
 show: true
 width: 12
-group: My Life
-title: "Resource Sharing"
+date: 2025-03-27 00:01:00 +0800
+group: My Share
 ---
 
 <style>
@@ -20,13 +20,13 @@ title: "Resource Sharing"
   }
   .masonry-gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-gap: 10px;
-    grid-auto-flow: dense;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* 自动填充列，列宽最小200px */
+    grid-gap: 10px; /* 图片间距 */
+    grid-auto-flow: dense; /* 密集排列，减少空白 */
   }
   .masonry-gallery img {
     width: 100%;
-    height: auto;
+    height: auto; /* 高度自适应 */
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
@@ -34,7 +34,10 @@ title: "Resource Sharing"
   .masonry-gallery img:hover {
     transform: scale(1.05);
   }
-  /* Responsive design for smaller screens */
+  .item-description {
+    margin: 8px 0;
+  }
+  /* 响应式设计 */
   @media (max-width: 768px) {
     .masonry-gallery {
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -45,39 +48,26 @@ title: "Resource Sharing"
       grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
     }
   }
-  /* Optional styling for individual items */
-  .share-item {
-    text-align: center;
-  }
-  .share-item p {
-    margin: 5px 0;
-  }
 </style>
 
-{% assign categories = "Tools,Data,Code,Others" | split: "," %}
-
-{% for cat in categories %}
-  <div class="category-section">
-    <h2 class="category-title">{{ cat }}</h2>
-    <div class="masonry-gallery">
-
-      {%
-        comment
-        Loop through a data file or collection that stores item info: category, image, intro, link, etc.
-        In this example, we assume there's a data file named `resources.yml`.
-        For each item, we check if its "category" matches the current cat, then display its info.
-      endcomment
-      %}
-      {% for item in site.data.resources %}
-        {% if item.category == cat %}
-          <div class="share-item">
-            <img src="{{ item.image | relative_url }}" alt="{{ item.name }}" loading="lazy">
-            <p>{{ item.intro }}</p>
-            <a href="{{ item.link | relative_url }}" download>Download</a>
-          </div>
-        {% endif %}
-      {% endfor %}
-
+<!-- 工具 -->
+<div class="category-section">
+  <h2 class="category-title">工具</h2>
+  <div class="masonry-gallery">
+    
+    <!-- 你的IELTS-99 sentences 工具 -->
+    <div>
+      <img src="/assets/tools/99s.png" alt="IELTS-99 sentences" loading="lazy"/>
+      <p class="item-description">
+        A local webpage that displays 99 English sentences with their Chinese translations 
+        and provides text-to-speech functionality for convenient practice. 
+        <a href="/assets/tools/99s.html" target="_blank">下载</a>
+      </p>
     </div>
+
+    
+
   </div>
-{% endfor %}
+</div>
+
+
