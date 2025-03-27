@@ -2,7 +2,7 @@
 show: true
 width: 12
 date: 2020-01-12 00:01:00 +0800
-group: My Share
+group: My Life
 ---
 
 <style>
@@ -20,10 +20,10 @@ group: My Share
     padding-bottom: 5px;
   }
 
-  /* 单个条目容器：左右分布 */
+  /* 单个条目容器：左右分布，垂直居中 */
   .item-container {
     display: flex;
-    align-items: flex-start;
+    align-items: center; /* 关键属性：使图片与文字垂直居中 */
     margin-top: 20px;
     gap: 20px; /* 图片与文字的间隔 */
   }
@@ -41,7 +41,7 @@ group: My Share
   }
   /* 文字介绍样式 */
   .item-description {
-    font-size: 1.2em; /* 加大字体 */
+    font-size: 1.3em; /* 加大字体 */
     line-height: 1.6em; 
     margin-bottom: 0; 
   }
@@ -50,9 +50,9 @@ group: My Share
   }
 </style>
 
-<!-- 工具 -->
+<!--Tools -->
 <div class="category-section">
-  <h2 class="category-title">工具</h2>
+  <h2 class="category-title">Tools</h2>
   <div class="item-container">
     <div>
       <img src="/assets/tools/99s.png" alt="IELTS-99 sentences" loading="lazy" />
@@ -62,7 +62,7 @@ group: My Share
         A local webpage that displays 99 English sentences with their Chinese translations 
         and provides text-to-speech functionality for convenient practice. 
         <br>
-        <a href="/assets/tools/99s.html" target="_blank">下载</a>
+        <a href="/assets/tools/99s.html" target="_blank">Go</a>
       </p>
     </div>
   </div>
