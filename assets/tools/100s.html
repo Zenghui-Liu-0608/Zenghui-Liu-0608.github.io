@@ -1,0 +1,1154 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>英文翻译练习工具</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 30px;
+        }
+        .exercise {
+            margin-bottom: 25px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: #fff;
+        }
+        .chinese {
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 16px;
+        }
+        .input-area {
+            margin-bottom: 10px;
+        }
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            min-height: 60px;
+            font-size: 14px;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .answer {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            font-size: 14px;
+        }
+        .correct {
+            color: #27ae60;
+            font-weight: bold;
+        }
+        .incorrect {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        .feedback {
+            margin-top: 5px;
+            font-style: italic;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px 0;
+        }
+        #checkAll {
+            background-color: #2ecc71;
+            padding: 10px 20px;
+        }
+        #checkAll:hover {
+            background-color: #27ae60;
+        }
+        #resetAll {
+            background-color: #e74c3c;
+            padding: 10px 20px;
+            margin-left: 10px;
+        }
+        #resetAll:hover {
+            background-color: #c0392b;
+        }
+        .progress {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>英文翻译练习工具</h1>
+        <div class="progress">
+            进度: <span id="completed">0</span>/100
+        </div>
+        <div class="controls">
+            <button id="checkAll">检查所有答案</button>
+            <button id="resetAll">重置所有</button>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">1. 经常做运动会提高人的自信</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Regular exercise can increase one's self-confidence</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">2. 教学的质量对学生成绩有很大的影响。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The quality of teaching can make a huge difference to students' academic performance.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">3. 家长和老师应该努力去减少小孩看电视的时间。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Parents and teachers should make an effort to limit children's screen time.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">4. 经济的下滑(economic slowdown)导致失业率的上升</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Economic slowdown has led to a climbing unemployment rate.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">5. 经济的发展需要年轻的劳动者</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">A country's economic development relies on a supply of young workers.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">6. 工作很多的人没有时间去休息</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">People with a heavy workload do not have adequate time to rest.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">7. 在中国，很多学生晚上都要自习</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">A large number of students in China have to do self-study at night.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">8. 城市的发展对历史遗迹构成了威胁</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The development of cities has posed a threat to heritage sites.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">9. 我们不能够忽视面对面的交流</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">We should not ignore face-to-face communication.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">10. 有些公共服务很难收支平衡</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Some public services have problems in breaking even.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">11. 我们需要考虑社会和经济的环境</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">We have to consider the social and economic context.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">12. 密集种植对生物多样性造成了威胁</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Intensive farming poses a threat to bio-diversity.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">13. 平等的教育能帮助解决学生学习成绩不好</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Equal access to education can help tackle educational underachievement.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">14. 接触不同的文化可以促进创新</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Exposure to different cultures can encourage creativity.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">15. 政府应该重视社会福利(welfare services)，尤其是医疗服务。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The government should give priority to welfare services, especially the healthcare.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">16. 教育或许决定了人的工作机会</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Education may hold the key to one's job prospect.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">17. 使用化石资源对环境会造成破坏。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The use of fossil fuels can cause damage to the environment.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">18. 建造住宅楼有助于解决城市的拥挤问题。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Building apartment blocks helps solve overcrowding in cities.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">19. 贫穷的人可以通过努力工作来提高社会地位</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">People from disadvantaged backgrounds can improve their social status by working hard.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">20. 因为全球化，人们需要同不同背景的人工作。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Because of globalisation, people need to work with those from diverse backgrounds.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">21. 我们需要采取措施去解决一些棘手的问题。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">We need to take action to solve some intractable problems.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">22. 媒体通过夸大受害者的伤痛去吸引观众。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The media attract attention by sensationalising victims' suffering.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">23. 基因工程让人们能培养新的农作物品种</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Genetic engineering allows people to nurture crop varieties.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">24. 经常运动使得人们保持健康的心态</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Doing exercise regularly helps people maintain a healthy state of mind.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">25. 不健康的生活方式让人们处于生病的危险之中。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">An unhealthy lifestyle puts people at risk of illness.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">26. 奖学金鼓励更多的学生去学习研究生课程。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Government grants could encourage more students to take postgraduate courses.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">27. 社区改造为罪犯提供了获得职业技能的机会</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Community service provides offenders with opportunities to acquire transferable skills.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">28. 法律应该将醉驾变成刑事犯罪</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Legislation should make drink driving a criminal offence.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">29. 乡村地区给人们提供机会去远离现代生活的压力和噪音。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Rural areas provide people with opportunities to escape pressure and noises of modern life.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">30. 人口老龄化促使国家提高法定退休年龄(statutory retirement age)。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The ageing population has prompted countries to raise the statutory retirement age.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">31. 政府提供一些城市很多资金去保护历史建筑(historic buildings)。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Governments should offer some cities funds to preserve historic buildings.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">32. 应该允许老师强制捣蛋的小孩离开教室。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Teachers should be permitted to use force to remove disruptive children from the classroom.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">33. 农村的失业问题在某种程度上可以通过城乡转移(rural-to-urban shift)解决</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Unemployment in rural areas can be addressed partially by the rural-to-urban shift.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">34. 高层建筑有时候被认为是城市的eyesore。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">High-rise buildings are sometimes regarded as eyesores of the city.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">35. 太空科技的投资应该获得政府的支持</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The investment in space technology should be supported by the government.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">36. 历史文物因为它的历史重要性而被保存</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Historic relics should be preserved for their historical significance.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">37. 学校活动的设置要能让孩子体会到成就感和提升他们的幸福感</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Sports and other school activities can be designed to give children a sense of accomplishment and to promote their well-being.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">38. 被鼓励着去打破陈规</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Some employees are encouraged to break the mould.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">39. 上下班的时间变得更长了</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Commuting time has been prolonged because of traffic congestion.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">40. 电脑技能可以运用到学习工作中</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Computer skills can be applied in their studies as well as their working lives.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">41. 大部分的环境破坏都可以归咎于人类的活动。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Most of environmental degradation is attributed to human activities.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">42. 许多孩子每天接触暴力内容</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Many children are exposed to violent content every day.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">43. 家庭环境被认为是小孩成长最重要的影响。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Family environment is widely thought to be the most important influence on children's development.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">44. 随着越来越多的年轻人参与志愿工作，社区的凝聚力(cohesion)会加强</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">With an increasing number of young people participating in volunteer work, community cohesion will be enhanced.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">45. 移民有时候被认为是社会团结的一个威胁。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Immigrants are sometimes recognised as a threat to social cohesion.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">46. 没有受过高等教育的年轻人只能找到低技术的工作</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Young people without tertiary education qualifications normally end up working in low-skilled jobs.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">47. 一些人不支持转基因食品</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Some people disapprove of genetically modified food.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">48. 旅游景点竭力满足游客的需要和品味</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Tourist spots endeavor to cater for tourists' tastes and needs.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">49. 在竞争激烈的社会，有工作的人关心职业发展。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">In a highly competitive society, working adults usually focus on career advancement.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">50. 审美观是因文化而异的。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Perception of beauty differs from culture to culture.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">51. 因为费用的下降，航空最近几十年发展得很快。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Because of low-cost carriers, the aviation industry has developed at an astounding pace over the past decades.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">52. 动物实验有时候不能够检验出药物的不良副作用。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Animal testing sometimes fails to detect the undesirable side effects of drugs.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">53. 非法捕杀导致一些动物灭绝</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">Some animals have died out because of illegal hunting.</div>
+        </div>
+        
+        <div class="exercise">
+            <div class="chinese">54. 电脑对人交流技能的影响随着年龄变化。</div>
+            <div class="input-area">
+                <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+            </div>
+            <button class="show-answer">查看答案</button>
+            <div class="answer">The impact of computers on communication skills varies across ages.</div>
+        </div>
+            <div class="exercise">
+                <div class="chinese">55. 很多女孩都不愿意在男人居多的行业里(male-dominated world)找工作。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Many girls are not willing to seek employment in a male-dominated world.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">56. 学校的主要功能是给下一代灌输知识(impart knowledge)。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The main function of schools is to impart knowledge to the next generation.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">57. 艺术不属于学校的主科。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The arts are not among core subject areas at school.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">58. 空运可能产生大量的温室气体。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Air freight is likely to create enormous greenhouse gases.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">59. 孩子很有可能有行为的问题</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Some children are likely to have behavioural problems.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">60. 人口的扩大是大量垃圾产生的原因</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The rapid population expansion is the main reason for the huge accumulation of waste.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">61. 严格的惩罚是减少犯罪率的有效手段</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Stiff punishment is an effective method to reduce crime.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">62. 我们的环境还是很糟糕</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Our environment is still in a dire state.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">63. 因为失业率高升，大学生感到有压力去努力学习</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Undergraduates feel under increasing pressure to study hard, because of the soaring unemployment rate.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">64. 种族歧视仍然很严重</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Racial discrimination remains a serious problem.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">65. 死记乘法表并不是提高算术能力的最好方式。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Learning the times table by rote is not the best way to improve numeracy.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">66. 贫穷国家的首要问题是满足人们基本生存需求</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The top priority for deprived countries is to satisfy citizens' basic needs.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">67. 基因食物对健康的影响仍然未知。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The health effect of GE food remains unclear/yet to be known.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">68. 网络购物对于很多人已经成为生活中的很普通的一部分。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Online shopping has become a normal part of people's everyday life.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">69. 在一个消费社会里，人们不再满足生活必需品（bare necessities）。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">In the consumer society, bare necessities are not able to satisfy people's needs.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">70. 人们不健康的生活方式是他们倾向于依赖科技的结果。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">People's unhealthy lifestyle is the result of their tendency to rely heavily on technology.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">71. 贫穷是社区犯罪上升的原因。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Poverty is responsible for the crime wave in many communities.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">72. 电子汽车的发明是我们维护环境所做努力的其中一部分。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The invention of electric vehicles is part of our effort to sustain the environment.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">73. 送贵重的礼物（lavish gifts）是中国的习惯</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">It is very common for Chinese people to exchange lavish gifts.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">74. 未来几十年我们很难保护植物多样性</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">We will find it difficult to preserve biodiversity in the coming decades.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">75. 随着年龄增长，很难和朋友和家人保持联系</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">With age, people find it difficult to maintain contact with family and friends.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">76. 免费上大学使得家景不好的学生有同等的上学机会</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Free university education makes it possible for students from less well-off backgrounds to have equal access to tertiary education.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">77. 很多人觉得自己有必要赶时尚。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Many people consider it necessary to follow fashion.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">78. 经费削减让很多年轻人很难接受大学教育。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Budget cuts make it difficult for many young people to receive a college education.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">79. 有时候，很难去评估人类行为的环境代价。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Sometimes, it is difficult to evaluate the environmental cost of human activities.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">80. 在大城市有一些贫困的社区。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">There are some economically deprived communities in large cities.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">81. 按照能力分班和学生的成绩没有明显的联系。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">There is no clear link between grouping students by ability and their levels of attainment.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">82. 体育课可以促进身体健康，增强信心</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The PE class improves students' physical conditions and boosts their confidence.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">83. 竞争激烈，一些城市处于弱势，因为缺少资源，比如：天然气和化石燃料。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The competition is intense and some countries are at a disadvantage because of the lack of resources such as natural gas and fossil fuels.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">84. 在发展中国家开设新的分公司可以降低生产成本,产生巨大的利润</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Opening new branches in developing countries can reduce the cost of production and generate huge profits.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">85. 生活方式的轻微变化也能够产生巨大的变化，并且可以减少我们日常活动对环境的影响。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Small lifestyle changes can make a huge difference and can reduce the environmental impact of our daily activities.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">86. 因为没有实习机会，对他们来说提升工作技能是很难的</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">It is difficult for them to improve job skills because there are no work placements.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">87. 大学生没办法赚到钱即使他们获得文凭。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">University students cannot earn money even though they have gained qualifications.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">88. 因为竞争是激烈和技术的迅速发展，现在经营一家公司是一个艰巨的任务。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Running an organisation in today's world can be a daunting task, because competition is stiff and technology is developing rapidly.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">89. 事实是，一些工作已经被砍掉，因为机械化的原因。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The fact is that some jobs have been made redundant because of mechanisation.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">90. 确实如此，现在很多人选择走向环保和减少能源的使用。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">It is true that many people today have chosen to go green and cut down on the use of energy.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">91. 判刑对年轻人是有伤害，因为这么一个事实：犯罪的记录会给他们职业留下阴影。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">A prison sentence can be damaging to young people, due to the fact that the criminal record can cast a long shadow on their career.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">92. 我相信快餐广告和肥胖的普遍有直接的联系。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">I believe that there is a direct link between fast food advertisements and rising levels of obesity.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">93. 政府的资金也可以用于污染清理工作，这可以创造一个舒适的环境。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Money can be used for clean-up operation, which can help create a pleasant environment.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">94. 很必要加强管制一些广告，这些广告鼓励消费者买一些自己不需要的东西。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">It is necessary to censor some advertisements which encourage people to buy more than they need.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">95. 这会有助于提高空气质量，这也降低了一些健康问题的风险，比如呼吸道疾病。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">This can help to improve air quality, which can reduce the risk of suffering health problems such as respiratory diseases.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">96. 当局应该控制这些夸张报道社会问题的新闻。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Authorities should censor those news reports which give an exaggerated account of some social problems.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">97. 媒体喜欢报道暴力犯罪，因为可以吸引观众。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">The media prefer to report violent crimes, which can help attract viewers.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">98. 这就是为什么文员（clerical workers）如今经常有健康的问题。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">It is the reason why many clerical workers today suffer health problems.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">99. 许多员工愿意在那些可以获得晋升机会(promotional opportunities)的公司工作。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Many employees prefer to work in companies where they can gain promotional opportunities.</div>
+            </div>
+            
+            <div class="exercise">
+                <div class="chinese">100. 很多年轻人选择在英文国家（English-speaking countries）学习，在那里，他们可以在世界著名的大学学习。</div>
+                <div class="input-area">
+                    <textarea class="user-input" placeholder="请输入您的翻译..."></textarea>
+                </div>
+                <button class="show-answer">查看答案</button>
+                <div class="answer">Many young people have chosen to study in English-speaking countries, where they can study at some world famous universities.</div>
+            </div>
+        </div>
+
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // 显示/隐藏答案
+                const showAnswerButtons = document.querySelectorAll('.show-answer');
+                showAnswerButtons.forEach(button => {
+                    button.addEventListener('click', function() {
+                        const answerDiv = this.nextElementSibling;
+                        if (answerDiv.style.display === 'block') {
+                            answerDiv.style.display = 'none';
+                            this.textContent = '查看答案';
+                        } else {
+                            answerDiv.style.display = 'block';
+                            this.textContent = '隐藏答案';
+                            
+                            // 检查用户输入是否正确
+                            const userInput = this.parentElement.querySelector('.user-input').value.trim().toLowerCase();
+                            const correctAnswer = answerDiv.textContent.trim().toLowerCase();
+                            
+                            // 移除之前的反馈
+                            const oldFeedback = answerDiv.querySelector('.feedback');
+                            if (oldFeedback) {
+                                oldFeedback.remove();
+                            }
+                            
+                            // 添加新的反馈
+                            const feedback = document.createElement('div');
+                            feedback.className = 'feedback';
+                            
+                            if (userInput === '') {
+                                feedback.textContent = '您还没有输入翻译';
+                            } else if (userInput === correctAnswer) {
+                                feedback.className += ' correct';
+                                feedback.textContent = '正确！';
+                            } else {
+                                feedback.className += ' incorrect';
+                                feedback.textContent = '您的翻译与参考答案不同';
+                            }
+                            
+                            answerDiv.appendChild(feedback);
+                            
+                            // 更新进度
+                            updateProgress();
+                        }
+                    });
+                });
+                
+                // 检查所有答案按钮
+                document.getElementById('checkAll').addEventListener('click', function() {
+                    const answerDivs = document.querySelectorAll('.answer');
+                    answerDivs.forEach(answerDiv => {
+                        answerDiv.style.display = 'block';
+                        const showButton = answerDiv.previousElementSibling;
+                        showButton.textContent = '隐藏答案';
+                        
+                        // 检查用户输入是否正确
+                        const userInput = answerDiv.parentElement.querySelector('.user-input').value.trim().toLowerCase();
+                        const correctAnswer = answerDiv.textContent.trim().toLowerCase();
+                        
+                        // 移除之前的反馈
+                        const oldFeedback = answerDiv.querySelector('.feedback');
+                        if (oldFeedback) {
+                            oldFeedback.remove();
+                        }
+                        
+                        // 添加新的反馈
+                        const feedback = document.createElement('div');
+                        feedback.className = 'feedback';
+                        
+                        if (userInput === '') {
+                            feedback.textContent = '您还没有输入翻译';
+                        } else if (userInput === correctAnswer) {
+                            feedback.className += ' correct';
+                            feedback.textContent = '正确！';
+                        } else {
+                            feedback.className += ' incorrect';
+                            feedback.textContent = '您的翻译与参考答案不同';
+                        }
+                        
+                        answerDiv.appendChild(feedback);
+                    });
+                    
+                    // 更新进度
+                    updateProgress();
+                });
+                
+                // 重置所有按钮
+                document.getElementById('resetAll').addEventListener('click', function() {
+                    const answerDivs = document.querySelectorAll('.answer');
+                    const inputs = document.querySelectorAll('.user-input');
+                    
+                    answerDivs.forEach(answerDiv => {
+                        answerDiv.style.display = 'none';
+                        const showButton = answerDiv.previousElementSibling;
+                        showButton.textContent = '查看答案';
+                        
+                        // 移除反馈
+                        const oldFeedback = answerDiv.querySelector('.feedback');
+                        if (oldFeedback) {
+                            oldFeedback.remove();
+                        }
+                    });
+                    
+                    inputs.forEach(input => {
+                        input.value = '';
+                    });
+                    
+                    // 重置进度
+                    document.getElementById('completed').textContent = '0';
+                });
+                
+                // 更新进度函数
+                function updateProgress() {
+                    const inputs = document.querySelectorAll('.user-input');
+                    let completed = 0;
+                    
+                    inputs.forEach(input => {
+                        if (input.value.trim() !== '') {
+                            completed++;
+                        }
+                    });
+                    
+                    document.getElementById('completed').textContent = completed;
+                }
+                
+                // 监听输入框变化以更新进度
+                const inputs = document.querySelectorAll('.user-input');
+                inputs.forEach(input => {
+                    input.addEventListener('input', updateProgress);
+                });
+            });
+        </script>
+    </body>
+</html>

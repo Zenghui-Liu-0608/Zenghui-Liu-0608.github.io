@@ -66,5 +66,18 @@ group: My Share
       </p>
     </div>
   </div>
-</div>
 
+
+ <div class="item-container">
+    <div>
+      <img src="/assets/tools/s100.png" alt="IELTS-100 sentences" loading="lazy" />
+    </div>
+    <div class="item-text">
+      <p class="item-description">
+        This is an online tool based on Gujiabei IELTS writing 100 sentences translation practice, designed to help IELTS candidates systematically improve the basic writing skills. This tool selects 100 core sentence patterns of frequently used topics in IELTS writing, covering common topics such as society, education, environment and science and technology. Through the scientific training mode of "Chinese prompt - English translation - answer check", it helps learners to master authentic English expressions, correct common grammatical mistakes and accumulate academic writing vocabulary.
+        <br>
+        <a href="/assets/tools/100s.html" target="_blank">Go</a>
+      </p>
+    </div>
+  </div>
+</div>
