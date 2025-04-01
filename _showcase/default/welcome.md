@@ -1,4 +1,3 @@
-
 ---
 show: true
 width: 12
@@ -6,57 +5,69 @@ date: 2024-01-12 00:01:00 +0800
 ---
 
 <div class="p-4" style="max-width: 1200px; margin: 0 auto;">
-    <div style="display: flex; align-items: flex-start;">
-        <!-- 左边：文字和视频 -->
-        <div style="flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
-            <p style="font-size: 20px; margin: 0 0 20px 0;">
-                <code>Showcase</code> Here, I will share some interesting aspects of my life, such as sports: basketball, table tennis, and badminton; travel; and some community activities I organize and participate in. I believe this will help you understand me better.
+    <div style="display: flex; gap: 20px;">
+        <!-- 左侧区域：文字+视频 -->
+        <div style="flex: 1; min-width: 0;">
+            <p style="font-size: 20px; margin-bottom: 20px;">
+                <code>Showcase</code> Here, I will share some interesting aspects of my life...
             </p>
-            <div style="position: relative; padding-bottom: 55.56%; height: 0; overflow: hidden;">
-                <!-- 视频宽高比为9:5 (5 / 9 ≈ 0.5556) -->
-                <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" controls>
-                    <source src="/assets/videos/my_video.mp4" type="video/mp4">
-                    Your browser does not support the video tag.
+            
+            <!-- 视频容器 (9:5比例) -->
+            <div style="position: relative; padding-bottom: 55.56%; background: #f0f0f0;">
+                <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" controls>
+                    <source src="/assets/images/my_video.mp4" type="video/mp4">
                 </video>
             </div>
         </div>
-        <!-- 右边：图片 -->
-        <div style="margin-left: 20px; position: relative; padding-bottom: 75%; height: 0; overflow: hidden;">
-            <!-- 图片宽高比为3:4 (4 / 3 ≈ 1.3333) -->
-            <img src="/assets/images/abc.png" alt="Showcase image" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
+        
+        <!-- 右侧图片 (3:4比例) -->
+        <div style="width: 300px; flex-shrink: 0;">
+            <div style="position: relative; padding-bottom: 133.33%; height: 0;">
+                <img src="/assets/images/abc.png" 
+                     style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;" 
+                     alt="Showcase image">
+            </div>
         </div>
     </div>
-    <script>
-        // 获取文字和视频容器以及图片元素
-        const textVideoContainer = document.querySelector('.p-4 > div > div:first-child');
-        const rightImageContainer = document.querySelector('.p-4 > div > div:last-child');
+</div>
 
-        // 等待图片加载完成
-        const img = rightImageContainer.querySelector('img');
-        img.onload = function() {
-            // 获取文字和视频容器的总高度
-            const textVideoHeight = textVideoContainer.offsetHeight;
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 获取左侧区域和图片容器
+    const leftColumn = document.querySelector('.p-4 > div > div:first-child');
+    const rightColumn = document.querySelector('.p-4 > div > div:last-child');
+    const imgContainer = rightColumn.firstElementChild;
+    
+    // 计算左侧总高度
+    const leftHeight = leftColumn.offsetHeight;
+    
+    // 根据3:4比例计算图片宽度
+    const imgWidth = leftHeight * 0.75; // 3/4 = 0.75
+    
+    // 设置图片容器尺寸
+    rightColumn.style.width = imgWidth + 'px';
+    imgContainer.style.paddingBottom = '133.33%'; // 保持3:4比例
+    
+    // 响应式调整
+    window.addEventListener('resize', function() {
+        const newLeftHeight = leftColumn.offsetHeight;
+        const newImgWidth = newLeftHeight * 0.75;
+        rightColumn.style.width = newImgWidth + 'px';
+    });
+});
+</script>
 
-            // 获取图片的原始宽高比
-            const imgAspectRatio = 4 / 3; // 3:4
-
-            // 计算图片的宽度，使其高度等于文字和视频容器的高度
-            const imgWidth = textVideoHeight / imgAspectRatio;
-
-            // 设置图片容器的宽度
-            rightImageContainer.style.width = imgWidth + 'px';
-
-            // 设置图片容器的高度等于文字和视频容器的高度
-            rightImageContainer.style.height = textVideoHeight + 'px';
-        };
-
-        // 动态调整布局以适应窗口大小变化
-        window.addEventListener('resize', function() {
-            const img = rightImageContainer.querySelector('img');
-            const textVideoHeight = textVideoContainer.offsetHeight;
-            const imgAspectRatio = 4 / 3; // 3:4
-            const imgWidth = textVideoHeight / imgAspectRatio;
-            rightImageContainer.style.width = imgWidth + 'px';
-            rightImageContainer.style.height = textVideoHeight + 'px';
-        });
-    </script>
+<style>
+@media (max-width: 768px) {
+    .p-4 > div {
+        flex-direction: column;
+    }
+    .p-4 > div > div:last-child {
+        width: 100% !important;
+        margin-top: 20px;
+    }
+    .p-4 > div > div:last-child > div {
+        padding-bottom: 75% !important; /* 移动端保持3:4比例 */
+    }
+}
+</style>
