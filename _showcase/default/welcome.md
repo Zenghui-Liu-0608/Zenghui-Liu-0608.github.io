@@ -32,7 +32,7 @@ date: 2024-01-12 00:01:00 +0800
     </div>
     <!-- 视频部分 -->
     <div style="margin-top: 20px; text-align: center;">
-        <video width="640" height="360" controls>
+        <video width="355" height="200" controls>
             <source src="/assets/images/my_video.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
