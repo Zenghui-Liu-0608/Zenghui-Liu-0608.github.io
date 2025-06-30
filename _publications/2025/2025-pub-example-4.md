@@ -11,5 +11,5 @@ cover:          /assets/images/covers/cover25-4.png
 authors:
 - jing Lin,Zenghui Liu*,Mingyu Zhai,Weiyao Yang.
 links:
-  Paper: http://dx.doi.org/10.1016/j.jenvman.2025.125067
+  Paper: https://authors.elsevier.com/sd/article/S2666-1233(25)00060-1
 ---
