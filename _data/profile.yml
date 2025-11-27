@@ -25,7 +25,7 @@ short_bio: >-
  
   <p>
     你好, Hello, こんにちは, Bonjour, Привет, Hallo, مرحبا, नमस्ते, 안녕하세요, Ciao.
-  I'm Liu Zenghui. I am currently completing my master's studies at the <a href="https://tiei2014.tju.edu.cn/">School of Future Technology</a>, <a href="http://www.tju.edu.cn">Tianjin University</a>, primarily engaged in fire dynamics, building fire analysis, and intelligent fire protection. The supervisor of my master's program is Professor <a href="https://arch.tju.edu.cn/info/1186/3163.htm">Gang Liu</a>.  Between October 2022 and July 2023, I conducted one-year research on the spatiotemporal prediction of infection risks in waiting rooms as a research assistant. In the future, I will devote myself to research on resilience, sustainability, and equity of complex urban systems.  Starting from September 2026, I will pursue a doctoral degree in Civil Engineering at <a href="https://www.ubc.ca/">The University of British Columbia</a>. My research focus will be on national-scale building decarbonization, urban energy systems, and life cycle assessment. I am also a student member of the Architectural Society of China, the Fire Engineers Association, the International Society for Urban Information, and the International Building Performance Simulation Association. I also serve as a peer reviewer for journals such as Humanities and Social Sciences Communications, Science Progress, Knowledge-Based System, and Journal of Safety Science and Resilience. Since April 2025, I have been on probation as a young editorial board member of <a href="https://press.jandoo.ac">Jandoo press</a> <a href="https://press.jandoo.ac/journals/jsbe/">Journal of Sustainable Built Environment (JSBE)</a>.
+  I'm Liu Zenghui. I am currently completing my master's studies at the <a href="https://tiei2014.tju.edu.cn/">School of Future Technology</a>, <a href="http://www.tju.edu.cn">Tianjin University</a>, primarily engaged in fire dynamics, building fire analysis, and intelligent fire protection. The supervisor of my master's program is Professor <a href="https://arch.tju.edu.cn/info/1186/3163.htm">Gang Liu</a>.  Between October 2022 and July 2023, I conducted one-year research on the spatiotemporal prediction of infection risks in waiting rooms as a research assistant. In the future, I will devote myself to research on resilience, sustainability, and equity of complex urban systems.  I am also a student member of the Architectural Society of China, the Fire Engineers Association, the International Society for Urban Information, and the International Building Performance Simulation Association. I also serve as a peer reviewer for journals such as Humanities and Social Sciences Communications, Science Progress, Knowledge-Based System, and Journal of Safety Science and Resilience. Since April 2025, I have been on probation as a young editorial board member of <a href="https://press.jandoo.ac">Jandoo press</a> <a href="https://press.jandoo.ac/journals/jsbe/">Journal of Sustainable Built Environment (JSBE)</a>.
    In my spare time, I play basketball, table tennis, Guan Dan (a kind of card game), listen to music, and play the guitar (for indie music lovers).
   </p>
 
@@ -35,10 +35,6 @@ portrait_caption: >-
   Photo by NEO.
 
 education:
-- name: The University of British Columbia
-  logo: /assets/images/badges/UBC.webp
-  position: Ph.D. in Civil Engineering
-  date: Sep. 2026 - Jun. 2030(expected)
 - name: Tianjin University
   logo: /assets/images/badges/TJU_Social_circle.png
   position: >- 
